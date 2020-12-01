@@ -4,7 +4,11 @@ app = Flask(__name__)
 forms = [
     {
         'title' : 'web development',
-        'question' : 'an epic question'
+        'question' : 'Quality and value of user inferfaces.'
+    },
+    {
+        'title' : 'security',
+        'question' : 'Quality, value, and speed of secuiryt services.'
     }
 ]
 
@@ -13,9 +17,9 @@ forms = [
 def home():
     return render_template('home.html', forms=forms)
 
-@app.route('/about')
-def about():
-    return "<h1>About Page</h1>"
+@app.route('/home/form')
+def form():
+    return render_template('form.html', forms=forms)
 
 if __name__ == '__main__':
     app.run(debug=True)

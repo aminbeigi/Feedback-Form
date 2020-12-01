@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <h1>some info:</h1>
     <p>individual name: </p>
     <p>project: </p>
     <p>category</p>
-    <input type="button" onclick="location.href='/form';" value="Continue to form" />
-</body>
-</html>
+    <input type="button" onclick="location.href='/home/form';" value="Continue to form" />
+{% endblock content %}
