@@ -1,6 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>some info:</h1>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ user_form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class ="border-bottom mb-4">legend_test</legend>
+                <div class="form-group">
+                    {{ user_form.individual_name.label(class="form-control-label") }}
+                    {{ user_form.individual_name(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+        </form>
+    </div>    
+
     <p>individual name: </p>
     <p>project: </p>
     <p>category</p>
