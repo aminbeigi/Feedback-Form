@@ -10,13 +10,13 @@ form_content = [
         'title' : 'web development',
         'question 1' : 'Quality and value of user inferfaces.',
         'question 2' : 'Features have been added as requested (i.e. buttons).',
-        'question 3' : 'Do you want an extended meeting about ideas on how to further grow your business?'
+        'question 3' : 'Do you want an extended meeting about ideas on how to further grow '
     },
     {
         'title' : 'security',
         'question 1' : 'Quality, value, and speed of secuirty services.',
         'question 2' : 'Clarity and promptness of communicating security concerns.',
-        'question 3' : 'Do you want an extended meeting about ideas on how to further grow your business?'
+        'question 3' : 'Do you want an extended meeting about ideas on how to further grow '
     }
 ]
 
@@ -26,8 +26,8 @@ def home():
     user_form = UserInfoForm()
     if user_form.validate_on_submit():
         data = {
-            'name' : user_form.project_name.data,
-            'project_name' : user_form.project_name.data,
+            'name' : user_form.business_name.data,
+            'business_name' : user_form.business_name.data,
             'project_category' : user_form.project_category_name.data
         }
         session['data'] = data #session (cookie) variable
