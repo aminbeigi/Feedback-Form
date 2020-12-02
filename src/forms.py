@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField
+from wtforms import StringField, SubmitField, SelectField, RadioField
 from wtforms.validators import DataRequired
 
 class UserInfoForm(FlaskForm):
@@ -7,3 +7,7 @@ class UserInfoForm(FlaskForm):
     project_name = StringField('Project name: ', validators=[DataRequired()])
     project_category_name =SelectField('Project category: ', validators=[DataRequired()], choices=[('web_development', 'Website Development'), ('security', 'Security')])    
     submit = SubmitField('continue')
+
+class FeedbackForm(FlaskForm):
+    question_1 = RadioField('Question 1', choices=[('one', '1'), ('two', '2'), ('three', '3'), ('three', '4'), ('three', '5')])
+    submit = SubmitField('submit')

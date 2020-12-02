@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, redirect
-from forms import UserInfoForm
+from forms import UserInfoForm, FeedbackForm
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '6ba6b74d871b12dea79bfc9013067c7c'
@@ -21,11 +21,12 @@ def home():
     user_form = UserInfoForm()
     if user_form.validate_on_submit():
         return redirect(url_for('form'))
-    return render_template('home.html', content=content, user_form=user_form)
+    return render_template('home.html', user_form=user_form, content=content)
 
 @app.route('/home/form')
 def form():
-    return render_template('form.html', form=form, content=content)
+    feedback_form = FeedbackForm()
+    return render_template('form.html', feedback_form=feedback_form, content=content)
 
 if __name__ == '__main__':
     app.run(debug=True)

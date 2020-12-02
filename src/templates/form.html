@@ -1,4 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-    <p>{{content[0]['title']}}</p>
+    <div class="content-section">
+        <form method="POST">
+            {{ feedback_form.hidden_tag() }}
+            <fieldset class="form-group">
+                <p>Scale: 1-5</p>
+                <ul>1 = worst</ul>
+                <ul>5 = best</ul>
+                <legend class ="border-bottom mb-4">Please complete the following form:</legend>
+                <div class="form-group">
+                    <br> {{ feedback_form.question_1.label(class="form-control-label") }} </br>
+                    {% for subfield in feedback_form.question_1 %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                {{ feedback_form.submit(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>    
 {% endblock content %}

@@ -1,20 +1,26 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
-        <form method="POST" action="">
+        <form method="POST">
             {{ user_form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class ="border-bottom mb-4">legend_test</legend>
+                <legend class ="border-bottom mb-4">Please enter some personal info:</legend>
                 <div class="form-group">
                     {{ user_form.individual_name.label(class="form-control-label") }}
                     {{ user_form.individual_name(class="form-control form-control-lg") }}
                 </div>
+                <div class="form-group">
+                    {{ user_form.project_name.label(class="form-control-label") }}
+                    {{ user_form.project_name(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ user_form.project_category_name.label(class="form-control-label") }}
+                    {{ user_form.project_category_name(class="form-control form-control-lg") }}
+                </div>
             </fieldset>
+            <div class="form-group">
+                {{ user_form.submit(class="btn btn-outline-info")}}
+            </div>
         </form>
     </div>    
-
-    <p>individual name: </p>
-    <p>project: </p>
-    <p>category</p>
-    <input type="button" onclick="location.href='/home/form';" value="Continue to form" />
 {% endblock content %}
