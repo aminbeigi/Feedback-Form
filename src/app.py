@@ -10,13 +10,13 @@ form_content = [
         'title' : 'web development',
         'question 1' : 'Quality and value of user inferfaces.',
         'question 2' : 'Features have been added as requested (i.e. buttons).',
-        'question 3' : 'Do you want an extended meeting about ideas on how to firther grow your business?'
+        'question 3' : 'Do you want an extended meeting about ideas on how to further grow your business?'
     },
     {
         'title' : 'security',
-        'question' : 'Quality, value, and speed of secuiryt services.',
-        'question 2' : '',
-        'question 3' : 'Do you want an extended meeting about ideas on how to firther grow your business?'
+        'question 1' : 'Quality, value, and speed of secuirty services.',
+        'question 2' : 'Clarity and promptness of communicating security concerns.',
+        'question 3' : 'Do you want an extended meeting about ideas on how to further grow your business?'
     }
 ]
 

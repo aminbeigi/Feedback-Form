@@ -10,4 +10,6 @@ class UserInfoForm(FlaskForm):
 
 class FeedbackForm(FlaskForm):
     question_1 = RadioField('Question 1', choices=[('one', '1'), ('two', '2'), ('three', '3'), ('three', '4'), ('three', '5')])
+    question_2 = RadioField('Question 2', choices=[('one', '1'), ('two', '2'), ('three', '3'), ('three', '4'), ('three', '5')])
+    question_3 = RadioField('Question 3', choices=[('yes'), ('no')])
     submit = SubmitField('submit')

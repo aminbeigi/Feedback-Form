@@ -8,8 +8,12 @@
                 <ul>1 = worst</ul>
                 <ul>5 = best</ul>
                 <legend class ="border-bottom mb-4">Please complete the following form:</legend>
+                
+                <!-- client chooses website development -->
+                {% if data['project_category'] == 'web_development' %}
                 <div class="form-group">
                     <br> {{ feedback_form.question_1.label(class="form-control-label") }} </br>
+                    <p> {{ form_content[0]['question 1'] }} </p>
                     {% for subfield in feedback_form.question_1 %}
                     <tr>
                         <td>{{ subfield }}</td>
@@ -17,6 +21,65 @@
                     </tr>
                 {% endfor %}
                 </div>
+
+                <div class="form-group">
+                    <br> {{ feedback_form.question_2.label(class="form-control-label") }} </br>
+                    <p> {{ form_content[0]['question 2'] }} </p>
+                    {% for subfield in feedback_form.question_2 %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+                </div>
+
+                <div class="form-group">
+                    <br> {{ feedback_form.question_3.label(class="form-control-label") }} </br>
+                    <p> {{ form_content[0]['question 3'] }} </p>
+                    {% for subfield in feedback_form.question_3 %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- client chooses security -->
+                {% if data['project_category'] == 'security' %}
+                <div class="form-group">
+                    <br> {{ feedback_form.question_1.label(class="form-control-label") }} </br>
+                    <p> {{ form_content[1]['question 1'] }} </p>
+                    {% for subfield in feedback_form.question_1 %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+                </div>
+
+                <div class="form-group">
+                    <br> {{ feedback_form.question_2.label(class="form-control-label") }} </br>
+                    <p> {{ form_content[1]['question 2'] }} </p>
+                    {% for subfield in feedback_form.question_2 %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+                </div>
+
+                <div class="form-group">
+                    <br> {{ feedback_form.question_3.label(class="form-control-label") }} </br>
+                    <p> {{ form_content[1]['question 3'] }} </p>
+                    {% for subfield in feedback_form.question_3 %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+                </div>
+                {% endif %}
 
             </fieldset>
             <div class="form-group">
