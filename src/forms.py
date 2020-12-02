@@ -4,6 +4,6 @@ from wtforms.validators import DataRequired
 
 class UserInfoForm(FlaskForm):
     individual_name = StringField('Individual name: ', validators=[DataRequired()])
-    project_name = StringField('Project name: : ', validators=[DataRequired()])
-    project_category_name =SelectField('Project category: ', validators=[DataRequired()])    
+    project_name = StringField('Project name: ', validators=[DataRequired()])
+    project_category_name =SelectField('Project category: ', validators=[DataRequired()], choices=[('web_development', 'Website Development'), ('security', 'Security')])    
     submit = SubmitField('continue')
