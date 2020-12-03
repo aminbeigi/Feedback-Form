@@ -1,9 +1,6 @@
-from flask import Flask, render_template, url_for, redirect, session, request
-from forms import UserInfoForm, FeedbackForm
-
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = '6ba6b74d871b12dea79bfc9013067c7c'
+from flask import render_template, url_for, redirect, session, request
+from feedbackform.forms import UserInfoForm, FeedbackForm
+from feedbackform import app
 
 form_content = [
     {
@@ -20,7 +17,7 @@ form_content = [
     }
 ]
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     user_form = UserInfoForm()
@@ -40,6 +37,3 @@ def form():
     data = session['data']       # counterpart for session
     feedback_form = FeedbackForm()
     return render_template('form.html', feedback_form=feedback_form, form_content=form_content, data=data)
-
-if __name__ == '__main__':
-    app.run(debug=True)

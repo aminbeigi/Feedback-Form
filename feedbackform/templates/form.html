@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                     <br> {{ feedback_form.question_3.label(class="form-control-label") }} </br>
-                    <p> {{ form_content[0]['question 3'] }} </p>
+                    <p> {{ form_content[0]['question 3']  + data['business_name'] + '?' }}</p>
                     {% for subfield in feedback_form.question_3 %}
                     <tr>
                         <td>{{ subfield }}</td>
