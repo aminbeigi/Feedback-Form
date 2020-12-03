@@ -1,6 +1,11 @@
 from flask import render_template, url_for, redirect, session, request
 from feedbackform.forms import UserInfoForm, FeedbackForm
 from feedbackform import app
+from feedbackform.static_config_parser import StaticConfigParser
+from feedbackform.send_email import SendEmail
+
+#CONFIG = StaticConfigParser()
+
 
 form_content = [
     {
@@ -31,9 +36,13 @@ def home():
         return redirect(url_for('form', data=data))
     return render_template('home.html', user_form=user_form, form_content=form_content)
 
-@app.route('/home/form')
+@app.route('/home/form', methods=['GET', 'POST'])
 def form():
     data = request.args['data']  # counterpart for url_for()
     data = session['data']       # counterpart for session
     feedback_form = FeedbackForm()
+    if feedback_form.validate_on_submit():
+        print("#########################")
+        print("#########################")
+        print("#########################")
     return render_template('form.html', feedback_form=feedback_form, form_content=form_content, data=data)
