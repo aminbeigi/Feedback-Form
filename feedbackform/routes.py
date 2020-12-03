@@ -37,6 +37,7 @@ def home():
 
 @app.route('/home/form', methods=['GET', 'POST'])
 def form():
+    body = ''
     data = request.args['data']  # counterpart for url_for()
     data = session['data']       # counterpart for session
     feedback_form = FeedbackForm()
@@ -50,12 +51,11 @@ def form():
                 } # make this a dict somewhere else
 
                 for i in range(1, 4):
-                    print(f'Question {i}')
-                    print(dictionary[f'question {i}'])
-                    print('Rating: ' + feedback_lst[f'question_{i}'])
+                    body += f'Question {i}\n'
+                    body += dictionary[f'question {i}'] + '\n'
+                    body += 'Rating: ' + feedback_lst[f'question_{i}'] + '\n\n' # don't leave blank on last
 
-        #subject = f"Feedback from {data['individual_name']}"
-        #body = form_content[]
-        #SEND_EMAIL.send(subject, body)
+        subject = f"Feedback from {data['individual_name']}"
+        SEND_EMAIL.send(subject, body)
         return render_template('thank_you.html')
     return render_template('form.html', feedback_form=feedback_form, form_content=form_content, data=data)
