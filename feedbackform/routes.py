@@ -54,7 +54,13 @@ def form():
                 for i in range(1, 4):
                     body += f'Question {i}\n'
                     body += dictionary[f'question {i}'] + '\n'
-                    body += 'Rating: ' + feedback_lst[f'question_{i}'] + '\n\n' # don't leave blank on last
+                    body += 'user input: ' + feedback_lst[f'question_{i}'] + '\n\n'
+                
+                body += "Additional comments:\n"
+                if feedback_form.comment.data != '':
+                    body += f"user input: {feedback_form.comment.data}"
+                else:
+                    body += "No comment provided."
 
         subject = f"Feedback from {data['individual_name']}"
         SEND_EMAIL.send(subject, body)

@@ -81,6 +81,11 @@
                 </div>
                 {% endif %}
 
+                <div class="form-group">
+                    {{ feedback_form.comment.label(class="form-control-label") }}
+                    {{ feedback_form.comment(class="form-control form-control-lg") }}                    
+                </div>
+
             </fieldset>
             <div class="form-group">
                 {{ feedback_form.submit(class="btn btn-outline-info")}}
