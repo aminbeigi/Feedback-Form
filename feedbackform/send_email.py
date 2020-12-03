@@ -12,8 +12,6 @@ class SendEmail():
             smtp.starttls() # encrypt traffic
             smtp.ehlo() # re-identify ourselves as encrypted traffic
 
-            print(EMAIL_ADDRESS, EMAIL_PASSWORD)
-
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
 
             subject = "hello there"
@@ -28,8 +26,6 @@ class SendEmail():
             smtp.ehlo() # identify ourselves with gmail
             smtp.starttls() # encrypt traffic
             smtp.ehlo() # re-identify ourselves as encrypted traffic
-
-            smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
 
             message = f"Subject: {subject}\n\n{body}"
 

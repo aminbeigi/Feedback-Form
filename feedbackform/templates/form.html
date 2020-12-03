@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
-        <form method="POST">
+        <form action="" method="POST">  
             {{ feedback_form.hidden_tag() }}
             <fieldset class="form-group">
                 <p>Scale: 1-5</p>
@@ -10,7 +10,7 @@
                 <legend class ="border-bottom mb-4">Please complete the following form:</legend>
                 
                 <!-- client chooses website development -->
-                {% if data['project_category'] == 'web_development' %}
+                {% if data['project_category'] == 'web development' %}
                 <div class="form-group">
                     <br> {{ feedback_form.question_1.label(class="form-control-label") }} </br>
                     <p> {{ form_content[0]['question 1'] }} </p>
