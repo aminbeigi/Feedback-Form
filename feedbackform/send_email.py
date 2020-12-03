@@ -6,9 +6,6 @@ EMAIL_ADDRESS = config.get('EMAIL', 'email_address')
 EMAIL_PASSWORD = config.get('EMAIL', 'email_password')
 
 class SendEmail():
-    def __init__(self):
-        print("yay emails")
-    
     def send(self, subject, body):
         with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
             smtp.ehlo() # identify ourselves with gmail
