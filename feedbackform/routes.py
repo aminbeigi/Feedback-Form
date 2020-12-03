@@ -3,18 +3,19 @@ from feedbackform.forms import UserInfoForm, FeedbackForm
 from feedbackform import app
 from feedbackform.static_config_parser import StaticConfigParser
 from feedbackform.send_email import SendEmail
+import feedbackform.errors
 
 SEND_EMAIL = SendEmail()
 
 form_content = [
     {
-        'title' : 'web development',
+        'category' : 'web development',
         'question 1' : 'Quality and value of user inferfaces.',
         'question 2' : 'Features have been added as requested (i.e. buttons).',
         'question 3' : 'Do you want an extended meeting about ideas on how to further grow '
     },
     {
-        'title' : 'security',
+        'category' : 'security',
         'question 1' : 'Quality, value, and speed of secuirty services.',
         'question 2' : 'Clarity and promptness of communicating security concerns.',
         'question 3' : 'Do you want an extended meeting about ideas on how to further grow '
@@ -43,7 +44,7 @@ def form():
     feedback_form = FeedbackForm()
     if feedback_form.validate_on_submit():
         for dictionary in form_content:
-            if data['project_category'] == dictionary['title']:
+            if data['project_category'] == dictionary['category']:
                 feedback_lst = {
                     'question_1' : feedback_form.question_1.data,
                     'question_2' : feedback_form.question_2.data,
