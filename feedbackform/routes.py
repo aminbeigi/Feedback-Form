@@ -43,10 +43,16 @@ def form():
     if feedback_form.validate_on_submit():
         for dictionary in form_content:
             if data['project_category'] == dictionary['title']:
+                feedback_lst = {
+                    'question_1' : feedback_form.question_1.data,
+                    'question_2' : feedback_form.question_2.data,
+                    'question_3' : feedback_form.question_3.data
+                } # make this a dict somewhere else
+
                 for i in range(1, 4):
                     print(f'Question {i}')
                     print(dictionary[f'question {i}'])
-                    print(f'Rating: ')
+                    print('Rating: ' + feedback_lst[f'question_{i}'])
 
         #subject = f"Feedback from {data['individual_name']}"
         #body = form_content[]
