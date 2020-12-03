@@ -130,3 +130,6 @@ dmypy.json
 
 # VS code
 src/tempCodeRunnerFile.py
+
+# config.ini
+config/config.ini
