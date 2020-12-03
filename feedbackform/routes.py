@@ -43,11 +43,13 @@ def form():
     if feedback_form.validate_on_submit():
         for dictionary in form_content:
             if data['project_category'] == dictionary['title']:
-                print( dictionary['title'], '######')
-            print(data['project_category'], dictionary['title'])
+                for i in range(1, 4):
+                    print(f'Question {i}')
+                    print(dictionary[f'question {i}'])
+                    print(f'Rating: ')
 
         #subject = f"Feedback from {data['individual_name']}"
         #body = form_content[]
-        #SEND_EMAIL.send(s)
+        #SEND_EMAIL.send(subject, body)
         return render_template('thank_you.html')
     return render_template('form.html', feedback_form=feedback_form, form_content=form_content, data=data)
