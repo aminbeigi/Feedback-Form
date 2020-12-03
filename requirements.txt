@@ -1,0 +1,4 @@
+configparser
+flask == 1.1.2
+wtforms  == 2.3.3
+Flask-WTF == 0.14.3
