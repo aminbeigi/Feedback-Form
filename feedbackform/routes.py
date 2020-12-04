@@ -43,7 +43,7 @@ def form():
         return redirect(url_for('home'))
 
     body = ''
-    data = session['data']       # counterpart for session
+    data = session['data']
     feedback_form = FeedbackForm()
     if feedback_form.validate_on_submit():
         for dictionary in form_content:
