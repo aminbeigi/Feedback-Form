@@ -1,8 +1,8 @@
 <p align="center">
-<img src=""/>
+<img src="images/feedback_form.png" width="128" height="128"/>
 <br/>
 <h3 align="center">Feedback Form</h3>
-<p align="center">Source code for Feedback-Form</p>
+<p align="center">A lightweight web applicatoin developed in the web framework Flask.</p>
 <h2></h2>
 </p>
 
