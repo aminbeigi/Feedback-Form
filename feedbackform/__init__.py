@@ -1,6 +1,9 @@
 from flask import Flask
+from feedbackform.static_config_parser import StaticConfigParser
+
+config = StaticConfigParser()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '6ba6b74d871b12dea79bfc9013067c7c'
+app.config['SECRET_KEY'] = config.get('KEY', 'secret_key')
 
 from feedbackform import routes
