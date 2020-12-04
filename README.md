@@ -14,7 +14,8 @@
 </p>
 
 ## Description
-An epic description.
+Feedback-Form is a full-featured web application created using the Flask framework in python.  
+After gathering user data Feedback-Form will email configured participants the results.
 
 ## Requirements
 * Python 3.8.2+
