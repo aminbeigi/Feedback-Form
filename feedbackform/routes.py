@@ -32,14 +32,13 @@ def home():
             'business_name' : user_form.business_name.data,
             'project_category' : user_form.project_category_name.data
         }
-        session['data'] = data #session (cookie) variable
+        session['data'] = data # session (cookie) variable
         return redirect(url_for('form', data=data))
     return render_template('home.html', user_form=user_form, form_content=form_content)
 
 @app.route('/home/form', methods=['GET', 'POST'])
 def form():
     body = ''
-    data = request.args['data']  # counterpart for url_for()
     data = session['data']       # counterpart for session
     feedback_form = FeedbackForm()
     if feedback_form.validate_on_submit():
