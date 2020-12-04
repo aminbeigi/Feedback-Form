@@ -32,12 +32,16 @@ def home():
             'business_name' : user_form.business_name.data,
             'project_category' : user_form.project_category_name.data
         }
-        session['data'] = data # session (cookie) variable
+        session['data'] = data # save session (cookies) data
         return redirect(url_for('form', data=data))
     return render_template('home.html', user_form=user_form, form_content=form_content)
 
 @app.route('/home/form', methods=['GET', 'POST'])
 def form():
+    # user must fill out form to go to /home/form
+    if 'data' not in session:
+        return redirect(url_for('home'))
+
     body = ''
     data = session['data']       # counterpart for session
     feedback_form = FeedbackForm()
