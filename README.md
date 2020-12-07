@@ -6,7 +6,7 @@
 <h2></h2>
 </p>
 
-<br />
+<br/>
 <p align="center">
 <a href="../../issues"><img src="https://img.shields.io/github/issues/aminbeigi/Feedback-Form.svg?style=flat-square" /></a>
 <a href="../../pulls"><img src="https://img.shields.io/github/issues-pr/aminbeigi/Feedback-Form.svg?style=flat-square" /></a>
@@ -14,8 +14,8 @@
 </p>
 
 ## Description
-Feedback-Form is a full-featured web application created using the Flask framework in python.  
-After gathering user data Feedback-Form will email configured participants the results.
+Feedback-Form is a full-featured web application created using the Flask framework in Python.  
+After gathering user data Feedback-Form will email configured participants the data.
 
 ## Requirements
 * Python 3.8.2+
